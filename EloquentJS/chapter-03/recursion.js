@@ -1,7 +1,7 @@
 function isEven(num) {
     
   if (num % 1 !== 0) {
-    console.log('Number is not const!')
+    return 'Number is not const!'
   } else if (num == 0) {
     return true
   } else if (num == 1) {
