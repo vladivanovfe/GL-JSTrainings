@@ -1,7 +1,7 @@
 function isEven(num) {
     
   if (num % 1 !== 0) {
-    return 'Number is not const!'
+    throw new Error('Argument must be integer!')
   } else if (num == 0) {
     return true
   } else if (num == 1) {
