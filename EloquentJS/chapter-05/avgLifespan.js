@@ -47,33 +47,16 @@ function average(array) {
     return array.reduce(plus) / array.length;
 }
 
-var byName = {};
-ancestry.forEach(function(person) {
-    byName[person.name] = person;
-});
-
-function filter(array, test) {
-    var passed = [];
-    for (var i = 0; i < array.length; i++) {
-      if (test(array[i]))
-        passed.push(array[i]);
-    }
-    return passed;
-}
-
 function map(array, transform) {
     var mapped = [];
-    for (var i = 0; i < array.length; i++)
-      mapped.push(transform(array[i]));
+  
+    for (var count = 0; count < array.length; count++) {
+      mapped.push(transform(array[count]));
+    }
+  
     return mapped;
 }
 
-let mothers = ancestry.filter(function (person) {
-    return byName[person.mother] != null;
-});
-
-let differenceBorn = mothers.map(function (person) {
-    return person.born - byName[person.mother].born;
-});
-
-console.log(average(differenceBorn));
+function century(person) {
+    return Math.ceil(person.died / 100);
+}
