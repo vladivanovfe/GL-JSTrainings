@@ -57,6 +57,32 @@ function map(array, transform) {
     return mapped;
 }
 
-function century(person) {
-    return Math.ceil(person.died / 100);
+function groupBy(array, func) {
+    let groups = {};
+  
+    array.forEach(function (person) {
+        let groupName = func(person);
+  
+        if (groupName in groups) {
+            groups[groupName].push(person);
+        } else {
+            groups[groupName] = [person];
+        }
+    });
+  
+    return groups;
 }
+  
+let centuryBy = groupBy(ancestry, function(person) {
+    return Math.ceil(person.died / 100);
+})
+
+let age;
+
+for (i = 0; i < centuryBy.length; i++) {
+    age = average(centuryBy[i].map(function(person){
+        person.died - person.born;
+    }));
+}
+
+console.log(centuryBy + ': ' + age);
