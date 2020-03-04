@@ -1,4 +1,4 @@
-let ANCESTRY_FILE = JSON.stringify([
+let ANCESTRY_FILE = [
     {"name": "Carolus Haverbeke", "sex": "m", "born": 1832, "died": 1905, "father": "Carel Haverbeke", "mother": "Maria van Brussel"},
     {"name": "Emma de Milliano", "sex": "f", "born": 1876, "died": 1956, "father": "Petrus de Milliano", "mother": "Sophia van Damme"},
     {"name": "Maria de Rycke", "sex": "f", "born": 1683, "died": 1724, "father": "Frederik de Rycke", "mother": "Laurentia van Vlaenderen"},
@@ -38,9 +38,7 @@ let ANCESTRY_FILE = JSON.stringify([
     {"name": "Anna van Hecke", "sex": "f", "born": 1607, "died": 1670, "father": "Paschasius van Hecke", "mother": "Martijntken Beelaert"},
     {"name": "Maria Sturm", "sex": "f", "born": 1835, "died": 1917, "father": "Charles Sturm", "mother": "Seraphina Spelier"},
     {"name": "Jacobus Bernardus van Brussel", "sex": "m", "born": 1736, "died": 1809, "father": "Jan van Brussel", "mother": "Elisabeth Haverbeke"}
-]);
-
-let ancestry = JSON.parse(ANCESTRY_FILE);
+];
 
 function average(array) {
     function plus(a, b) { return a + b; }
@@ -73,16 +71,15 @@ function groupBy(array, func) {
     return groups;
 }
   
-let centuryBy = groupBy(ancestry, function(person) {
+let centuryBy = groupBy(ANCESTRY_FILE, function(person) {
     return Math.ceil(person.died / 100);
 })
 
-let age;
-
-for (i = 0; i < centuryBy.length; i++) {
-    age = average(centuryBy[i].map(function(person){
-        person.died - person.born;
+for (let century in centuryBy) {
+    let age = average(centuryBy[century].map(function (person) {
+        return person.died - person.born;
     }));
-}
 
-console.log(centuryBy + ': ' + age);
+    console.log(century + ": " + age);
+  
+}
