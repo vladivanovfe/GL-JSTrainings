@@ -1,5 +1,5 @@
-function replaceAt(substr, replacer) {
-    let str = 'hello world';
-    return str.split(substr).join(replacer);
+String.prototype.replaceAt = function (substr, replacer) {
+    let result = this.split(substr).join(replacer);
+    return result;
 }
-console.log(replaceAt('hello', 'hi'));
+console.log('hello world'.replaceAt('hello', 'hi'));
