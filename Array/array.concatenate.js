@@ -1,5 +1,4 @@
-Array.prototype.concatenate = function (array) {
-    return this.push(array);
-
-}   
-console.log(['a', 'b'].concatenate(['A', 'B'], ['J', 'Z']));
+Array.prototype.concatenate = function (...arrays) {
+    return this.concat(...arrays);
+}
+console.log(['a', 'b'].concatenate(['a', 'c'], ['c', 'd'], ['d', 'd', 'x']));
