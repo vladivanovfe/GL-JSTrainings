@@ -1,10 +1,10 @@
 Object.prototype.getKeys = function () {
-    // let keys = [];
-    // let obj = this;
-    // for (let key in obj) {
-    //     keys.push(key);
-    // }
-    let keys = [], i = 0;
-    for (keys[i++] in this) {}
+    let keys = [];
+    for (let key in this) {
+        if (this.hasOwnProperty(key)) {
+            keys.push(key);
+        }
+    }
+    return keys;
 }
-console.log({ 'first' : 'xxx', 'second' : 'zzz' }.getKeys());
+console.log({a: 'somestring', b: 42, c: false}.getKeys());

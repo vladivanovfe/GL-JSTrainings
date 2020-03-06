@@ -1,12 +1,10 @@
 Object.prototype.getValues = function () {
-    let obj = this;
-    let arr = [];
-    for (let val in obj) {
-        arr.push(val);
+    let values = [];
+    for (let val in this) {
+        if (this.hasOwnProperty(val)) {
+            values.push(this[val]);
+        }
     }
+    return values;
 }
-console.log({
-    a: 'somestring',
-    b: 42,
-    c: false
-  }.getValues())
+console.log({a: 'somestring', b: 42, c: false}.getValues());
