@@ -11,6 +11,6 @@ Object.prototype.getKeyValuePair = function (element) {
             values.push(this[val]);
         }
     }
-    return '[' + keys[element] + '] : ' + values[element] + '\n';
+    return `[${keys[element]}] : ${values[element]}`
 }
 console.log({a: 'somestring', b: 42, c: false}.getKeyValuePair(0));
