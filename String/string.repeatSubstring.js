@@ -2,9 +2,13 @@
 
 String.prototype.repeatSubstring = function (substr, times) {
     let str = this;
-    for (let i = 0; i < times; i++) {
-        str += substr;
+    if (str.indexOf(substr) > -1) {
+        let result = '';
+        for (let i = 0; i < times; i++) {
+            result += substr ;
+        }
+
+        return result;
     }
-    return str;
 }
-console.log('ASDF'.repeatSubstring('abc', 2));
+console.log('Hello world'.repeatSubstring('wor', 5));
