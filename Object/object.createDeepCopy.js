@@ -2,7 +2,12 @@ Object.prototype.createShallowCopy = function() {
     let shallowCopy = (this instanceof Object);
     for (let i in this) {
         if (i == 'createShallowCopy') {
-            shallowCopy[i] = this[i];
+            if (this[i] && typeof this[i] == "object") {
+                shallowCopy[i] = this[i].createShallowCopy();
+            } else {
+                shallowCopy[i] = this[i];
+            } 
+            
             return shallowCopy;
         };
     };
