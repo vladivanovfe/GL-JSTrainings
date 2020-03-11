@@ -1,3 +1,5 @@
+// 	.getKeyValuePair(key: string): string - returns a key"value pair in the next format "[key] : value"
+
 Object.prototype.getKeyValuePair = function (element) {
     let keys = [];
     for (let key in this) {

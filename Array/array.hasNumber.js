@@ -1,3 +1,5 @@
+// 	.hasNumber(number: Array<number>): boolean - Returns true if a given array has a number from arguments
+
 Array.prototype.hasNumber = function (num) {
     return this.indexOf(num) > -1;
 

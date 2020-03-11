@@ -1,3 +1,5 @@
+// .getOdd(): Array<number> - Returns a new array with only odd numbers
+
 Array.prototype.getOdd = function () {
     return this.map(x => {
         if (!(x % 2) == 0) {

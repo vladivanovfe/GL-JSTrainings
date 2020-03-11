@@ -1,3 +1,5 @@
+// .createDeepCopy(sourceObj: object): object - returns a deep copy of provided object. Assume that field may contain other references, they also must be deep copied. Do not use Object.assign() method.
+
 Object.prototype.createShallowCopy = function() {
     let shallowCopy = (this instanceof Object);
     for (let i in this) {

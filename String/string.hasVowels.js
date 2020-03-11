@@ -1,3 +1,5 @@
+// 	.hasVowels(string: string): boolean - Returns true if string has vowels
+
 String.prototype.hasVowels = function () {
     let vowels = ['a', 'e', 'u', 'i', 'o'];
     let str = this;
@@ -8,6 +10,6 @@ String.prototype.hasVowels = function () {
         } else {
             return false;
         }
-    }    
+    }  
 }
 console.log('ABC'.hasVowels());

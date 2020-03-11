@@ -1,3 +1,5 @@
+// .hasСonsonants(string: string): boolean - Returns true if string has consonants
+
 String.prototype.hasConsonants = function () {
     let vowels = ['a', 'e', 'u', 'i', 'o'];
     let str = this;

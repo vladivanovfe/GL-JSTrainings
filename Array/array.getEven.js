@@ -1,3 +1,5 @@
+// .getEven(): Array<number> - Returns a new array with only even numbers
+
 Array.prototype.getEven = function () {
     return this.map(x => {
         if (x % 2 == 0) {

@@ -1,3 +1,5 @@
+// .normalize(string: string): string - Returns a given substring in a lower case
+
 String.prototype.normalize = function (substr) {
     let result = '';
     let sub = String(substr).toLowerCase();

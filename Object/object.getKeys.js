@@ -1,3 +1,5 @@
+// .getKeys(): Array<string> - returns an array of objects keys (don't use Objects.keys() :))
+
 Object.prototype.getKeys = function () {
     let keys = [];
     for (let key in this) {

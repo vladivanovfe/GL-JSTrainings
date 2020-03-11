@@ -1,3 +1,5 @@
+// .getValues(): Array<any> - returns an array of values
+
 Object.prototype.getValues = function () {
     let values = [];
     for (let val in this) {
