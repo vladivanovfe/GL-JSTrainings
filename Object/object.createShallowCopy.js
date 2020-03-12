@@ -3,9 +3,14 @@
 Object.prototype.createShallowCopy = function(sourceObj) {        
     let copy = {};
 
-    for (let key in sourceObj) {
-        copy[key] = this[key];
+    for(key in sourceObj) {
+        if(typeof sourceObj[key] != "object" || Array) {
+            copy[key] = sourceObj[key];
+        } else {
+            let newObj = {};
+            copy[key] = {};
+            newObj[key].createShallowCopy();
+        }
     }
     return copy;
-
 };

@@ -5,10 +5,11 @@ Object.prototype.createDeepCopy = function (sourceObj) {
 
     for(key in sourceObj) {
         if(typeof sourceObj[key] != "object" || Array) {
-            copy[key] = sourceObj[key];
+            let newObj = {};
+            copy[key] = newObj[key];
         } else {
             copy[key] = {};
-            sourceObj[key].createDeepCopy();
+            newObj[key].createDeepCopy();
         }
     }
     return copy;
